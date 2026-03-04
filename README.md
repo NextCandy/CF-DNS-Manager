@@ -60,13 +60,12 @@
 
 - **GitHub OAuth** (推荐)
 
-| 变量名                 | 描述                                  |
-| :--------------------- | :------------------------------------ |
-| `GITHUB_CLIENT_ID`     | GitHub OAuth App 的 Client ID         |
-| `GITHUB_CLIENT_SECRET` | GitHub OAuth App 的 Client Secret     |
-| `ALLOWED_GITHUB_USER`  | 你的 GitHub 用户名                    |
-| `ALLOWED_GITHUB_USER1` | (可选) 允许登录的备用 GitHub 用户名 1 |
-| `ALLOWED_GITHUB_USER*` | (可选) 允许登录的备用 GitHub 用户名 * |
+| 变量名                 | 描述                              |
+| :--------------------- | :-------------------------------- |
+| `GITHUB_CLIENT_ID`     | GitHub OAuth App 的 Client ID     |
+| `GITHUB_CLIENT_SECRET` | GitHub OAuth App 的 Client Secret |
+| `ALLOWED_GITHUB_USER`  | 你的 GitHub 用户名                |
+
 
 - **密码登录** (可选)
 
@@ -78,11 +77,14 @@
 
 #### 多账户（可选）
 
-| 变量名          | 描述              |
-| :-------------- | :---------------- |
-| `CF_API_TOKEN1` | 备用账户 1 的令牌 |
-| `CF_API_TOKEN2` | 备用账户 2 的令牌 |
-| `...`           | 以此类推          |
+| 变量名                 | 描述                           |
+| :--------------------- | :----------------------------- |
+| `CF_API_TOKEN1`        | 备用账户 1 的令牌              |
+| `CF_API_TOKEN2`        | 备用账户 2 的令牌              |
+| `...`                  | 以此类推                       |
+| `ALLOWED_GITHUB_USER1` | 允许登录的备用 GitHub 用户名 1 |
+| `ALLOWED_GITHUB_USER2` | 允许登录的备用 GitHub 用户名 2 |
+| `...`                  | 以此类推                       |
 
 ### 4. 配置 GitHub OAuth（使用 GitHub 登录时需要）
 
@@ -110,9 +112,9 @@
 │   │   ├── github.js         # OAuth 重定向
 │   │   └── github/callback.js # OAuth 回调
 │   └── zones/                # Cloudflare API 代理
-│       ├── index.js          # 域名列表 (自动分页)
+│       ├── index.js          # 域名列表
 │       └── [zoneId]/         # 域名级操作
-│           ├── dns_records.js     # DNS 记录 CRUD (自动分页)
+│           ├── dns_records.js     # DNS 记录
 │           ├── dns_batch.js       # 批量删除
 │           ├── dns_export.js      # 导出
 │           ├── dns_import.js      # 导入
